@@ -1,14 +1,19 @@
 import { LoginForm } from "../../components/Forms/LoginForm";
 import womanLogin from "../../assets/woman-login.svg";
+import { HeaderSignup } from "../../components/Headers/HeaderSignup";
+import StyledLogin from "./styles";
 
 const Login = () => {
   return (
-    <main>
-      <div>
-        <LoginForm />
-        <img src={womanLogin} alt="Woman" />
-      </div>
-    </main>
+    <>
+      <HeaderSignup />
+      <StyledLogin>
+        <div>
+          <LoginForm />
+          <img src={womanLogin} alt="Woman" />
+        </div>
+      </StyledLogin>
+    </>
   );
 };
 

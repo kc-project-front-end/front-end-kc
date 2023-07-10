@@ -1,8 +1,8 @@
 import { useContext } from "react";
 import { UserContext } from "../../../contexts/usersContext";
 import { SubmitHandler, useForm } from "react-hook-form";
-
 import { Iuser } from "../../../interfaces/interface.user";
+import StyledFormLogin from "./styles";
 
 const LoginForm = () => {
   const { register, handleSubmit } = useForm<Iuser>();
@@ -14,24 +14,27 @@ const LoginForm = () => {
   };
 
   return (
-    <form onSubmit={handleSubmit(submit)}>
+    <StyledFormLogin onSubmit={handleSubmit(submit)}>
       <h2>LOGIN</h2>
 
-      <label htmlFor="usernameLogin">Nome de usuário</label>
       <input
         type="text"
-        id="usernameLogin"
         placeholder="Digite seu nome de usuário..."
         {...register("username")}
       />
 
-      <label htmlFor="passwordLogin">Senha</label>
-      <input type="text" id="passwordLogin" placeholder="Digite sua senha..." />
+      <input
+        type="text"
+        placeholder="Digite sua senha..."
+        {...register("password")}
+      />
 
       <a href="">Esqueceu sua senha?</a>
 
-      <button>Entrar</button>
-    </form>
+      <div>
+        <button type="submit">Entrar</button>
+      </div>
+    </StyledFormLogin>
   );
 };
 

@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-const StyledRegister = styled.main`
+const StyledLogin = styled.main`
   margin-top: 6rem;
   padding: 0 2rem;
 
@@ -41,4 +41,5 @@ const StyledRegister = styled.main`
     margin-top: 8rem;
   }
 `;
-export default StyledRegister;
+
+export default StyledLogin;

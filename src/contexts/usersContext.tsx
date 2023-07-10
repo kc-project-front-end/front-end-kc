@@ -19,8 +19,7 @@ const UserProvider = ({ children }: IdefaultChildren) => {
     try {
       const response = await api.post("/users/", formData);
       setUser(response.data.username);
-      //localStorage.setItem("@TOKEN", response.data.token)
-      // navigate("/login");
+      navigate("/login");
     } catch (error) {
       console.log(error);
     }
@@ -30,8 +29,8 @@ const UserProvider = ({ children }: IdefaultChildren) => {
     try {
       const response = await api.post("/users/login/", formData);
       setUser(response.data.username);
-      // localStorage.setItem("@TOKEN", response.data.access);
-      // navigate("/dashboard");
+      localStorage.setItem("@TOKEN", response.data.access);
+      navigate("/dashboard");
     } catch (error) {
       console.log(error);
     }

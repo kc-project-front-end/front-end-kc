@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
-import { StyledHeader, StyledMenuMobile } from "./styles";
+import { StyledHeader, StyledMenuDesktop, StyledMenuMobile } from "./styles";
 import { GiHamburgerMenu } from "react-icons/gi";
 import { AiOutlineClose } from "react-icons/ai";
 
@@ -44,6 +44,20 @@ const HeaderSignup = () => {
             />
           )}
         </StyledMenuMobile>
+
+        <StyledMenuDesktop>
+          <ul>
+            <li>
+              <Link to="/">Início</Link>
+            </li>
+            <li>
+              <Link to="/register">Criar conta</Link>
+            </li>
+            <li>
+              <Link to="/login">Login</Link>
+            </li>
+          </ul>
+        </StyledMenuDesktop>
       </div>
     </StyledHeader>
   );

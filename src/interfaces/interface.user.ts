@@ -14,12 +14,15 @@ interface IcreateUser {
   username: string;
   email: string;
   password: string;
-  address: {
-    country: string;
-    state: string;
-    city: string;
-    road: string;
-  };
+  address: Record<
+    string,
+    {
+      country: string;
+      state: string;
+      city: string;
+      road: string;
+    }
+  >;
 }
 
 interface IcontextUserProps {

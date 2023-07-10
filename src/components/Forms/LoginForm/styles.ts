@@ -1,15 +1,14 @@
-import styled from "styled-components";
+import { styled } from "styled-components";
 
-const StyledForm = styled.form`
+const StyledFormLogin = styled.form`
   display: flex;
   flex-direction: column;
-  gap: 0.3rem;
 
   h2 {
     text-align: center;
 
-    font-weight: 600;
     font-size: 1rem;
+    font-weight: 600;
 
     margin-top: 1rem;
   }
@@ -34,9 +33,11 @@ const StyledForm = styled.form`
     padding: 0 1rem;
   }
 
-  p {
-    margin-top: 0.5rem;
-    color: red;
+  a {
+    text-align: end;
+    margin-top: 1rem;
+    font-size: 1rem;
+    font-weight: 600;
   }
 
   div {
@@ -51,7 +52,7 @@ const StyledForm = styled.form`
     border-radius: 8px;
 
     margin-top: 2rem;
-    margin-bottom: 2rem;
+    margin-bottom: 1rem;
 
     width: 69%;
     height: 3rem;
@@ -86,6 +87,12 @@ const StyledForm = styled.form`
 
   @media (min-width: 1023px) {
     width: 30%;
+    margin-bottom: 12rem;
+
+    a:hover {
+      text-decoration: underline;
+      color: black;
+    }
   }
 
   @media (min-width: 1165px) {
@@ -117,4 +124,4 @@ const StyledForm = styled.form`
   }
 `;
 
-export { StyledForm };
+export default StyledFormLogin;

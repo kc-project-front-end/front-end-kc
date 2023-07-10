@@ -19,8 +19,6 @@ const RegisterForm = () => {
     createUser(formData);
   };
 
-  console.log(errors.address);
-
   return (
     <StyledForm onSubmit={handleSubmit(submit)}>
       <h2>CRIAR CONTA</h2>
@@ -58,30 +56,39 @@ const RegisterForm = () => {
       <input
         type="text"
         placeholder="Digite seu país..."
-        {...register("address.country", { required: true })}
+        {...register("address.country")}
       />
+      {errors.address?.country!.message && (
+        <p> * {errors.address?.country?.message}</p>
+      )}
 
       <input
         type="text"
         placeholder="Digite seu estado..."
         {...register("address.state")}
       />
-      {errors.address?.message && <p> * {errors.address?.message}</p>}
+      {errors.address?.state?.message && (
+        <p> * {errors.address?.state?.message}</p>
+      )}
 
       <input
         type="text"
         placeholder="Digite sua cidade..."
         {...register("address.city")}
       />
-      {errors.address?.message && <p> * {errors.address?.message}</p>}
+      {errors.address?.city?.message && (
+        <p> * {errors.address?.city?.message}</p>
+      )}
 
       <input
         type="text"
         placeholder="Rua e número da sua residência..."
         {...register("address.road")}
       />
+      {errors.address?.road?.message && (
+        <p> * {errors.address?.road?.message}</p>
+      )}
 
-      {errors.address?.message && <p> * {errors.address?.message}</p>}
       <div>
         <button type="submit">Criar conta</button>
       </div>
