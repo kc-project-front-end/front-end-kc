@@ -1,13 +1,15 @@
 import React from "react";
 import { GlobalStyles } from "./styles/global";
+import { Router } from "./routes";
+import { UserProvider } from "./contexts/usersContext";
 
 function App() {
   return (
     <>
       <GlobalStyles />
-      <div>
-        <h2>Estou aqui</h2>
-      </div>
+      <UserProvider>
+        <Router />
+      </UserProvider>
     </>
   );
 }
